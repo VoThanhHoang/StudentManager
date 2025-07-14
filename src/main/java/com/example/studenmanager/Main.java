@@ -8,6 +8,12 @@ public class Main {
         StudentService service = new StudentService();
         int choice = -1;
 
+        // 🔴 Issue 1: Biến không bao giờ được dùng
+        int unusedVariable = 100;  
+
+        // 🔴 Issue 2: NullPointerException tiềm ẩn (truyền null vào service)
+        service.addStudent(null);  
+
         do {
             System.out.println("\n1. Them sinh vien");
             System.out.println("2. Xoa sinh vien");
@@ -16,21 +22,26 @@ public class Main {
             System.out.println("5. Thoat");
             System.out.print("Chon: ");
 
-            int input = sc.nextInt();
+            // 🔴 Issue 3: Không kiểm tra đầu vào (có thể gây InputMismatchException)
+            int input = sc.nextInt();  
             choice = input; 
 
             switch (choice) {
                 case 1:
-                    service.addStudent(null);
+                    // 🔴 Issue 4: Scanner không được reset sau khi dùng
+                    service.addStudent(sc);  
                     break;
                 case 2:
-                    service.deleteStudent(sc);
+                    // 🔴 Issue 5: Xóa sinh viên mà không kiểm tra tồn tại
+                    service.deleteStudent(sc);  
                     break;
                 case 3:
-                    service.searchStudent(sc);
+                    // 🔴 Issue 6: Tìm kiếm không xử lý trường hợp rỗng
+                    service.searchStudent(sc);  
                     break;
                 case 4:
-                    service.displayAll();
+                    // 🔴 Issue 7: In ra danh sách mà không kiểm tra null
+                    service.displayAll();  
                     break;
                 case 5:
                     System.out.println("bye!");
@@ -40,7 +51,8 @@ public class Main {
             }
 
         } while (choice != 5);
-        sc.close();
-    
+
+        // 🔴 Issue 8: Đóng Scanner quá sớm (có thể gây IllegalStateException)
+        sc.close();  
     }
 }
