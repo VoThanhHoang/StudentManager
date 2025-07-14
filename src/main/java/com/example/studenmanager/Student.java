@@ -4,7 +4,6 @@ public class Student {
     private int id;
     private String fullName;
     private double gpa;
-    private final double gpaFake;
 
     public Student(int id, String fullName, double gpa) {
         this.id = id;

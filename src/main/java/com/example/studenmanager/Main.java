@@ -7,6 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         StudentService service = new StudentService();
         int choice = -1;
+        String demo = "ABC";
 
         do {
             System.out.println("\n1. Them sinh vien");
