@@ -9,6 +9,7 @@ public class StudentService {
     private ArrayList<Student> students = new ArrayList<>();
     private final int MAX = 100;
     private final int MIN = 1; // text issuse
+    private String demo = 123;
 
     public void addStudent(Scanner sc) {
         if (students.size() >= MAX) {
