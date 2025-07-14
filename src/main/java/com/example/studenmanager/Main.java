@@ -8,6 +8,8 @@ public class Main {
         StudentService service = new StudentService();
         int choice = -1;
 
+        int demoVariable = 4;
+
         do {
             System.out.println("\n1. Them sinh vien");
             System.out.println("2. Xoa sinh vien");
