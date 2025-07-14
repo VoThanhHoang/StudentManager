@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-
-
-
-
 public class StudentService {
     private ArrayList<Student> students = new ArrayList<>();
     private final int MAX = 100;

@@ -36,7 +36,7 @@ public class Main {
                     System.out.println("bye!");
                     break;
                 default:
-                    System.out.println("Lua chon sai!"); // ⚠️ Không xử lý tốt các lỗi input
+                    System.out.println("Lua chon sai!");
             }
 
         } while (choice != 5);
